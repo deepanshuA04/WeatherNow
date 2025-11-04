@@ -35,7 +35,7 @@ pipeline {
                       aws ecr create-repository --repository-name weathernow-frontend --region %AWS_REGION% || ver>nul
                       aws ecr create-repository --repository-name weathernow-backend --region %AWS_REGION% || ver>nul
 
-                      for /f "tokens=*" %%i in ('aws ecr get-login-password --region %AWS_REGION%') do docker login --username AWS --password-stdin %AWS_ACCOUNT%.dkr.ecr.%AWS_REGION%.amazonaws.com
+                                                aws ecr get-login-password --region %AWS_REGION% | docker login --username AWS --password-stdin %AWS_ACCOUNT%.dkr.ecr.%AWS_REGION%.amazonaws.com
 
                       docker tag weathernow-frontend:latest %FRONTEND_REPO%:latest
                       docker tag weathernow-backend:latest %BACKEND_REPO%:latest
@@ -74,7 +74,7 @@ pipeline {
 
     post {
         always {
-            node('any') {
+                node {
                 bat 'docker logout || ver>nul'
             }
         }
