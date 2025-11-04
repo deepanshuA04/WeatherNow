@@ -5,7 +5,7 @@ pipeline {
     environment {
         AWS_CREDS = credentials('aws-credentials')
         AWS_REGION = 'us-east-1'
-        AWS_ACCOUNT = '484907495137'
+        AWS_ACCOUNT = '164334671507'
         FRONTEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_REGION}.amazonaws.com/weathernow-frontend"
         BACKEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_REGION}.amazonaws.com/weathernow-backend"
     }
