@@ -1,0 +1,31 @@
+{
+  "family": "weathernow-backend",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::484907495137:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::484907495137:role/weathernowTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "backend",
+      "image": "484907495137.dkr.ecr.us-east-1.amazonaws.com/weathernow-backend:latest",
+      "portMappings": [{ "containerPort": 5000, "protocol": "tcp" }],
+      "essential": true,
+      "secrets": [
+        {
+          "name": "WEATHER_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:484907495137:secret:weathernow/weather_api_key"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/weathernow-backend",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "backend"
+        }
+      }
+    }
+  ]
+}

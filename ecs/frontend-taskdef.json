@@ -1,0 +1,25 @@
+{
+  "family": "weathernow-frontend",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::484907495137:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::484907495137:role/weathernowTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "frontend",
+      "image": "484907495137.dkr.ecr.us-east-1.amazonaws.com/weathernow-frontend:latest",
+      "portMappings": [{ "containerPort": 80, "protocol": "tcp" }],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/weathernow-frontend",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "frontend"
+        }
+      }
+    }
+  ]
+}
