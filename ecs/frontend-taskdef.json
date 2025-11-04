@@ -4,12 +4,12 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::484907495137:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::484907495137:role/weathernowTaskRole",
+  "executionRoleArn": "arn:aws:iam::164334671507:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::164334671507:role/weathernowTaskRole",
   "containerDefinitions": [
     {
       "name": "frontend",
-      "image": "484907495137.dkr.ecr.us-east-1.amazonaws.com/weathernow-frontend:latest",
+  "image": "164334671507.dkr.ecr.us-east-1.amazonaws.com/weathernow-frontend:latest",
       "portMappings": [{ "containerPort": 80, "protocol": "tcp" }],
       "essential": true,
       "logConfiguration": {

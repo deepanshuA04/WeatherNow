@@ -10,7 +10,7 @@
         "ssm:GetParameter",
         "ssm:GetParameters"
       ],
-      "Resource": "arn:aws:secretsmanager:us-east-1:484907495137:secret:weathernow/*"
+  "Resource": "arn:aws:secretsmanager:us-east-1:164334671507:secret:weathernow/*"
     },
     {
       "Sid": "CloudWatchLogs",
@@ -22,7 +22,7 @@
         "logs:DescribeLogStreams",
         "logs:DescribeLogGroups"
       ],
-      "Resource": "arn:aws:logs:us-east-1:484907495137:log-group:/ecs/*"
+  "Resource": "arn:aws:logs:us-east-1:164334671507:log-group:/ecs/*"
     }
   ]
 }
