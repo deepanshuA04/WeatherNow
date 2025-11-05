@@ -3,11 +3,10 @@ pipeline {
     agent any
 
     environment {
-        AWS_CREDS = credentials('weathernow-aws')
-        AWS_REGION = 'us-east-1'
+        AWS_DEFAULT_REGION = 'us-east-1'
         AWS_ACCOUNT = '164334671507'
-        FRONTEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_REGION}.amazonaws.com/weathernow-frontend"
-        BACKEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_REGION}.amazonaws.com/weathernow-backend"
+        FRONTEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_DEFAULT_REGION}.amazonaws.com/weathernow-frontend"
+        BACKEND_REPO = "${env.AWS_ACCOUNT}.dkr.ecr.${env.AWS_DEFAULT_REGION}.amazonaws.com/weathernow-backend"
     }
 
     stages {
