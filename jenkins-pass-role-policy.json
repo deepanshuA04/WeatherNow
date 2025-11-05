@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": [
+        "arn:aws:iam::164334671507:role/ecsTaskExecutionRole",
+        "arn:aws:iam::164334671507:role/weathernowTaskRole"
+      ]
+    }
+  ]
+}

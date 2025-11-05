@@ -15,7 +15,7 @@
       "secrets": [
         {
           "name": "WEATHER_API_KEY",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:164334671507:secret:weathernow/weather_api_key"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:164334671507:secret:weathernow/weather_api_key-RCePfT"
         }
       ],
       "logConfiguration": {
