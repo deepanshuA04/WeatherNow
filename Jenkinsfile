@@ -70,13 +70,9 @@ pipeline {
         }
     }
 
-        post {
-            always {
-                node {
-                    dir(env.WORKSPACE) {
-                        bat 'docker logout || ver>nul'
-                    }
-                }
-            }
+    post {
+        always {
+            bat 'docker logout || ver>nul'
+        }
     }
 }
