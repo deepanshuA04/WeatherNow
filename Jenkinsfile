@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -71,9 +70,13 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            bat 'docker logout || ver>nul'
-        }
+        post {
+            always {
+                node {
+                    dir(env.WORKSPACE) {
+                        bat 'docker logout || ver>nul'
+                    }
+                }
+            }
     }
 }
